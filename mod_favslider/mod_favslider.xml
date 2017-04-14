@@ -1,0 +1,6430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.0"
+	client="site"
+	method="upgrade">
+	<name>FavSlider Responsive Slideshow</name>
+	<author>FavThemes</author>
+	<creationDate>2013</creationDate> 
+	<authorUrl>http://www.favthemes.com</authorUrl> 
+	<authoremail>hello@favthemes.com</authoremail>
+	<copyright>Copyright (C) FavThemes. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+	<version>1.2</version>
+	<description>
+	<![CDATA[ 
+<p>Responsive Slideshow Module based on FlexSlider 2, the best responsive jQuery slide around.</p>
+<link rel="stylesheet" href="../modules/mod_favslider/theme/admin.css" type="text/css" />
+	]]>
+	</description>
+
+	<files>
+		<filename module="mod_favslider">mod_favslider.php</filename>
+		<filename>mod_favslider.xml</filename>
+		<filename>License.txt</filename>
+		<filename>index.html</filename>
+		<folder>js</folder>
+		<folder>theme</folder>
+	</files>
+
+	<media destination="favslider">
+        <filename>1.jpg</filename>
+        <filename>2.jpg</filename>
+        <filename>3.jpg</filename>
+        <filename>4.jpg</filename>
+        <filename>5.jpg</filename>
+    </media>
+	<help key="FavSlider Responsive Slideshow" />
+	<config>
+		<fields name="params">
+
+			<fieldset name="basic">
+
+					<field
+						name="slidertype"
+						type="list"
+						default="slidernav"
+						label="Slider Type"
+						description="Select the type of the slider">
+							<option	value="basic">Basic Slider</option>
+							<option	value="thumbnav">Thumbnail ControlNav</option>
+							<option	value="slidernav">Carousel Slider ControlNav</option>
+							<option	value="carousel">Carousel</option>
+					</field>
+
+					<field
+						name="jquery"
+						type="radio"
+						default="noconflict"
+						class="btn-group"
+						label="Load jQuery"
+						description="Select the method of loading the jQuery library">
+							<option	value="1">Yes</option>
+							<option	value="noconflict">Yes (no conflict)</option>
+							<option	value="0">No</option>
+					</field>				
+
+					<field
+						name="animation"
+						type="radio"
+						default="slide"
+						class="btn-group"
+						label="Transition Effect"
+						description="Select your animation type, fade or slide">
+							<option	value="fade">Fade</option>
+							<option	value="slide">Slide</option>
+					</field>
+
+					<field
+						name="slideshowSpeed"
+						type="text"
+						default="7000"
+						label="Cycling Speed"
+						description="Set the speed of the slideshow cycling, in milliseconds" />
+
+					<field
+						name="target"
+						type="list"
+						default="self"
+						label="URLs Target"
+						description="Select the general target setting of the URLs">
+							<option	value="self">_self</option>
+							<option	value="blank">_blank</option>
+							<option	value="parent">_parent</option>
+							<option	value="top">_top</option>
+					</field>
+
+					<field
+						name="arrowNav"
+						type="radio"
+						default="1"
+						class="btn-group"
+						label="Arrow Navigation"
+						description="Navigate between slides using the previous/next arrows">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+					</field>
+
+					<field
+						name="controlNav"
+						type="radio"
+						default="1"
+						class="btn-group"
+						label="Control Navigation"
+						description="Navigate between slides using the control buttons">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+					</field>
+
+					<field
+						name="slideshow"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Autorun"
+						description="Animate slider automatically">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+					</field>
+
+					<field
+						name="randomize"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Randomize"
+						description="Randomize slide order">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+					</field>
+
+					<field
+						name="animationLoop"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Animation Loop"
+						description="Should the animation loop? If false, previous/next navigation receive disable classes at either end">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+					</field>
+
+					<field
+						name="pauseOnHover"
+						type="radio"
+						default="1"
+						class="btn-group"
+						label="Pause On Hover"
+						description="Pause the slideshow when hovering over slider, then resume when no longer hovering">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+					</field>
+				
+					<field
+						name="keyboardNav"
+						type="radio"
+						default="1"
+						class="btn-group"
+						label="Keyboard Navigation"
+						description="Navigate between slides using the keyboard left/right keys">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+					</field>
+
+					<field
+						name="mousewheel"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="MouseNav"
+						description="Navigate between slides using the mousewheel">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+					</field>
+							
+				<field type="spacer" hr="true" />
+					
+					<field
+						name="file1active"
+						type="radio"
+						default="1"
+						class="btn-group"
+						label="Show Slide 1"
+						description="Choose if the slide should be displayed or not.">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+					<field
+						name="file1"
+						type="text"
+						default="media/favslider/1.jpg"
+						label="Slide 1 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file1link"
+						type="text"
+						label="Slide 1 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file1caption"
+						type="text"
+						label="Slide 1 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file2active"
+						type="radio"
+						default="1"
+						class="btn-group"
+						label="Show Slide 2"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file2"
+						type="text"
+						default="media/favslider/2.jpg"
+						label="Slide 2 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file2link"
+						type="text"
+						label="Slide 2 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file2caption"
+						type="text"
+						label="Slide 2 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file3active"
+						type="radio"
+						default="1"
+						class="btn-group"
+						label="Show Slide 3"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file3"
+						type="text"
+						default="media/favslider/3.jpg"
+						label="Slide 3 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file3link"
+						type="text"
+						label="Slide 3 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file3caption"
+						type="text"
+						label="Slide 3 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file4active"
+						type="radio"
+						default="1"
+						class="btn-group"
+						label="Show Slide 4"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file4"
+						type="text"
+						default="media/favslider/4.jpg"
+						label="Slide 4 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file4link"
+						type="text"
+						label="Slide 4 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file4caption"
+						type="text"
+						label="Slide 4 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file5active"
+						type="radio"
+						default="1"
+						class="btn-group"
+						label="Show Slide 5"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file5"
+						type="text"
+						default="media/favslider/5.jpg"
+						label="Slide 5 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file5link"
+						type="text"
+						label="Slide 5 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file5caption"
+						type="text"
+						label="Slide 5 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file6active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 6"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file6"
+						type="text"
+						label="Slide 6 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file6link"
+						type="text"
+						label="Slide 6 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file6caption"
+						type="text"
+						label="Slide 6 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file7active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 7"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file7"
+						type="text"
+						label="Slide 7 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file7link"
+						type="text"
+						label="Slide 7 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file7caption"
+						type="text"
+						label="Slide 7 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file8active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 8"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+				
+					<field
+						name="file8"
+						type="text"
+						label="Slide 8 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file8link"
+						type="text"
+						label="Slide 8 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file8caption"
+						type="text"
+						label="Slide 8 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file9active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 9"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file9"
+						type="text"
+						label="Slide 9 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file9link"
+						type="text"
+						label="Slide 9 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file9caption"
+						type="text"
+						label="Slide 9 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file10active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 10"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file10"
+						type="text"
+						label="Slide 10 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file10link"
+						type="text"
+						label="Slide 10 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file10caption"
+						type="text"
+						label="Slide 10 Caption"
+						description="Caption text for this slide" />
+						
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file11active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 11"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file11"
+						type="text"
+						label="Slide 11 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file11link"
+						type="text"
+						label="Slide 11 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file11caption"
+						type="text"
+						label="Slide 11 Caption"
+						description="Caption text for this slide" />
+						
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file12active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 12"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file12"
+						type="text"
+						label="Slide 12 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file12link"
+						type="text"
+						label="Slide 12 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file12caption"
+						type="text"
+						label="Slide 12 Caption"
+						description="Caption text for this slide" />
+						
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file13active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 13"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file13"
+						type="text"
+						label="Slide 13 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file13link"
+						type="text"
+						label="Slide 13 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file13caption"
+						type="text"
+						label="Slide 13 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file14active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 14"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file14"
+						type="text"
+						label="Slide 14 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file14link"
+						type="text"
+						label="Slide 14 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file14caption"
+						type="text"
+						label="Slide 14 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file15active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 15"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file15"
+						type="text"
+						label="Slide 15 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file15link"
+						type="text"
+						label="Slide 15 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file15caption"
+						type="text"
+						label="Slide 15 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file16active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 16"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file16"
+						type="text"
+						label="Slide 16 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file16link"
+						type="text"
+						label="Slide 16 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file16caption"
+						type="text"
+						label="Slide 16 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file17active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 17"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file17"
+						type="text"
+						label="Slide 17 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file17link"
+						type="text"
+						label="Slide 17 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file17caption"
+						type="text"
+						label="Slide 17 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file18active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 18"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file18"
+						type="text"
+						label="Slide 18 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file18link"
+						type="text"
+						label="Slide 18 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file18caption"
+						type="text"
+						label="Slide 18 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file19active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 19"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file19"
+						type="text"
+						label="Slide 19 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file19link"
+						type="text"
+						label="Slide 19 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file19caption"
+						type="text"
+						label="Slide 19 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file20active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 20"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file20"
+						type="text"
+						label="Slide 20 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file20link"
+						type="text"
+						label="Slide 20 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file20caption"
+						type="text"
+						label="Slide 20 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file21active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 21"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file21"
+						type="text"
+						label="Slide 21 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file21link"
+						type="text"
+						label="Slide 21 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file21caption"
+						type="text"
+						label="Slide 21 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file22active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 22"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file22"
+						type="text"
+						label="Slide 22 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file22link"
+						type="text"
+						label="Slide 22 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file22caption"
+						type="text"
+						label="Slide 22 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file23active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 23"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file23"
+						type="text"
+						label="Slide 23 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file23link"
+						type="text"
+						label="Slide 23 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file23caption"
+						type="text"
+						label="Slide 23 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file24active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 24"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file24"
+						type="text"
+						label="Slide 24 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file24link"
+						type="text"
+						label="Slide 24 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file24caption"
+						type="text"
+						label="Slide 24 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file25active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 25"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file25"
+						type="text"
+						label="Slide 25 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file25link"
+						type="text"
+						label="Slide 25 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file25caption"
+						type="text"
+						label="Slide 25 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file26active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 26"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file26"
+						type="text"
+						label="Slide 26 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file26link"
+						type="text"
+						label="Slide 26 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file26caption"
+						type="text"
+						label="Slide 26 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file27active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 27"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file27"
+						type="text"
+						label="Slide 27 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file27link"
+						type="text"
+						label="Slide 27 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file27caption"
+						type="text"
+						label="Slide 27 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file28active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 28"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file28"
+						type="text"
+						label="Slide 28 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file28link"
+						type="text"
+						label="Slide 28 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file28caption"
+						type="text"
+						label="Slide 28 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file29active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 29"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file29"
+						type="text"
+						label="Slide 29 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file29link"
+						type="text"
+						label="Slide 29 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file29caption"
+						type="text"
+						label="Slide 29 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file30active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 30"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file30"
+						type="text"
+						label="Slide 30 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file30link"
+						type="text"
+						label="Slide 30 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file30caption"
+						type="text"
+						label="Slide 30 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file31active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 31"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file31"
+						type="text"
+						label="Slide 31 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file31link"
+						type="text"
+						label="Slide 31 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file31caption"
+						type="text"
+						label="Slide 31 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file32active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 32"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file32"
+						type="text"
+						label="Slide 32 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file32link"
+						type="text"
+						label="Slide 32 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file32caption"
+						type="text"
+						label="Slide 32 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file33active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 33"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file33"
+						type="text"
+						label="Slide 33 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file33link"
+						type="text"
+						label="Slide 33 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file33caption"
+						type="text"
+						label="Slide 33 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file34active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 34"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file34"
+						type="text"
+						label="Slide 34 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file34link"
+						type="text"
+						label="Slide 34 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file34caption"
+						type="text"
+						label="Slide 34 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file35active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 35"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file35"
+						type="text"
+						label="Slide 35 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file35link"
+						type="text"
+						label="Slide 35 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file35caption"
+						type="text"
+						label="Slide 35 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file36active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 36"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file36"
+						type="text"
+						label="Slide 36 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file36link"
+						type="text"
+						label="Slide 36 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file36caption"
+						type="text"
+						label="Slide 36 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file37active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 37"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file37"
+						type="text"
+						label="Slide 37 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file37link"
+						type="text"
+						label="Slide 37 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file37caption"
+						type="text"
+						label="Slide 37 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file38active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 38"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file38"
+						type="text"
+						label="Slide 38 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file38link"
+						type="text"
+						label="Slide 38 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file38caption"
+						type="text"
+						label="Slide 38 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file39active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 39"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file39"
+						type="text"
+						label="Slide 39 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file39link"
+						type="text"
+						label="Slide 39 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file39caption"
+						type="text"
+						label="Slide 39 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file40active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 40"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file40"
+						type="text"
+						label="Slide 40 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file40link"
+						type="text"
+						label="Slide 40 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file40caption"
+						type="text"
+						label="Slide 40 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file41active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 41"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file41"
+						type="text"
+						label="Slide 41 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file41link"
+						type="text"
+						label="Slide 41 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file41caption"
+						type="text"
+						label="Slide 41 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file42active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 42"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file42"
+						type="text"
+						label="Slide 42 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file42link"
+						type="text"
+						label="Slide 42 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file42caption"
+						type="text"
+						label="Slide 42 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file43active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 43"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file43"
+						type="text"
+						label="Slide 43 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file43link"
+						type="text"
+						label="Slide 43 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file43caption"
+						type="text"
+						label="Slide 43 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file44active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 44"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file44"
+						type="text"
+						label="Slide 44 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file44link"
+						type="text"
+						label="Slide 44 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file44caption"
+						type="text"
+						label="Slide 44 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file45active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 45"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file45"
+						type="text"
+						label="Slide 45 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file45link"
+						type="text"
+						label="Slide 45 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file45caption"
+						type="text"
+						label="Slide 45 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file46active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 46"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file46"
+						type="text"
+						label="Slide 46 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file46link"
+						type="text"
+						label="Slide 46 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file46caption"
+						type="text"
+						label="Slide 46 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file47active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 47"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file47"
+						type="text"
+						label="Slide 47 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file47link"
+						type="text"
+						label="Slide 47 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file47caption"
+						type="text"
+						label="Slide 47 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file48active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 48"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file48"
+						type="text"
+						label="Slide 48 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file48link"
+						type="text"
+						label="Slide 48 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file48caption"
+						type="text"
+						label="Slide 48 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file49active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 49"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file49"
+						type="text"
+						label="Slide 49 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file49link"
+						type="text"
+						label="Slide 49 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file49caption"
+						type="text"
+						label="Slide 49 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file50active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 50"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file50"
+						type="text"
+						label="Slide 50 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file50link"
+						type="text"
+						label="Slide 50 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file50caption"
+						type="text"
+						label="Slide 50 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file51active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 51"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file51"
+						type="text"
+						label="Slide 51 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file51link"
+						type="text"
+						label="Slide 51 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file51caption"
+						type="text"
+						label="Slide 51 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file52active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 52"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file52"
+						type="text"
+						label="Slide 52 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file52link"
+						type="text"
+						label="Slide 52 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file52caption"
+						type="text"
+						label="Slide 52 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file53active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 53"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file53"
+						type="text"
+						label="Slide 53 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file53link"
+						type="text"
+						label="Slide 53 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file53caption"
+						type="text"
+						label="Slide 53 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file54active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 54"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file54"
+						type="text"
+						label="Slide 54 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file54link"
+						type="text"
+						label="Slide 54 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file45caption"
+						type="text"
+						label="Slide 54 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file55active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 55"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file55"
+						type="text"
+						label="Slide 55 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file55link"
+						type="text"
+						label="Slide 55 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file55caption"
+						type="text"
+						label="Slide 55 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file56active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 56"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file56"
+						type="text"
+						label="Slide 56 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file56link"
+						type="text"
+						label="Slide 56 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file56caption"
+						type="text"
+						label="Slide 56 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file57active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 57"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file57"
+						type="text"
+						label="Slide 57 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file57link"
+						type="text"
+						label="Slide 57 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file57caption"
+						type="text"
+						label="Slide 57 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file58active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 58"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file58"
+						type="text"
+						label="Slide 58 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file58link"
+						type="text"
+						label="Slide 58 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file58caption"
+						type="text"
+						label="Slide 58 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file59active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 59"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file59"
+						type="text"
+						label="Slide 59 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file59link"
+						type="text"
+						label="Slide 59 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file59caption"
+						type="text"
+						label="Slide 59 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file60active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 60"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file60"
+						type="text"
+						label="Slide 60 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file60link"
+						type="text"
+						label="Slide 60 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file60caption"
+						type="text"
+						label="Slide 60 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file61active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 61"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file61"
+						type="text"
+						label="Slide 61 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file61link"
+						type="text"
+						label="Slide 61 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file61caption"
+						type="text"
+						label="Slide 61 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file62active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 62"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file62"
+						type="text"
+						label="Slide 62 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file62link"
+						type="text"
+						label="Slide 62 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file62caption"
+						type="text"
+						label="Slide 62 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file63active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 63"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file63"
+						type="text"
+						label="Slide 63 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file63link"
+						type="text"
+						label="Slide 63 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file63caption"
+						type="text"
+						label="Slide 63 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file64active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 64"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file64"
+						type="text"
+						label="Slide 64 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file64link"
+						type="text"
+						label="Slide 64 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file64caption"
+						type="text"
+						label="Slide 64 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file65active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 65"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file65"
+						type="text"
+						label="Slide 65 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file65link"
+						type="text"
+						label="Slide 65 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file65caption"
+						type="text"
+						label="Slide 65 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file66active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 66"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file66"
+						type="text"
+						label="Slide 66 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file66link"
+						type="text"
+						label="Slide 66 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file66caption"
+						type="text"
+						label="Slide 66 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file67active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 67"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file67"
+						type="text"
+						label="Slide 67 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file67link"
+						type="text"
+						label="Slide 67 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file67caption"
+						type="text"
+						label="Slide 67 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file68active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 68"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file68"
+						type="text"
+						label="Slide 68 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file68link"
+						type="text"
+						label="Slide 68 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file68caption"
+						type="text"
+						label="Slide 68 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file69active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 69"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file69"
+						type="text"
+						label="Slide 69 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file69link"
+						type="text"
+						label="Slide 69 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file69caption"
+						type="text"
+						label="Slide 69 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file70active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 70"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file70"
+						type="text"
+						label="Slide 70 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file70link"
+						type="text"
+						label="Slide 70 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file70caption"
+						type="text"
+						label="Slide 70 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file71active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 71"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file71"
+						type="text"
+						label="Slide 71 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file71link"
+						type="text"
+						label="Slide 71 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file71caption"
+						type="text"
+						label="Slide 71 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file72active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 72"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file72"
+						type="text"
+						label="Slide 72 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file72link"
+						type="text"
+						label="Slide 72 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file72caption"
+						type="text"
+						label="Slide 72 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file73active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 73"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file73"
+						type="text"
+						label="Slide 73 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file73link"
+						type="text"
+						label="Slide 73 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file73caption"
+						type="text"
+						label="Slide 73 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file74active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 74"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file74"
+						type="text"
+						label="Slide 74 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file74link"
+						type="text"
+						label="Slide 74 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file74caption"
+						type="text"
+						label="Slide 74 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file75active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 75"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file75"
+						type="text"
+						label="Slide 75 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file75link"
+						type="text"
+						label="Slide 75 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file75caption"
+						type="text"
+						label="Slide 75 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file76active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 76"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file76"
+						type="text"
+						label="Slide 76 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file76link"
+						type="text"
+						label="Slide 76 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file76caption"
+						type="text"
+						label="Slide 76 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file77active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 77"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file77"
+						type="text"
+						label="Slide 77 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file77link"
+						type="text"
+						label="Slide 77 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file77caption"
+						type="text"
+						label="Slide 77 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file78active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 78"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file78"
+						type="text"
+						label="Slide 78 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file78link"
+						type="text"
+						label="Slide 78 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file78caption"
+						type="text"
+						label="Slide 78 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file79active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 79"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file79"
+						type="text"
+						label="Slide 79 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file79link"
+						type="text"
+						label="Slide 79 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file79caption"
+						type="text"
+						label="Slide 79 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file80active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 80"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file80"
+						type="text"
+						label="Slide 80 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file80link"
+						type="text"
+						label="Slide 80 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file80caption"
+						type="text"
+						label="Slide 80 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file81active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 81"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file81"
+						type="text"
+						label="Slide 81 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file81link"
+						type="text"
+						label="Slide 81 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file81caption"
+						type="text"
+						label="Slide 81 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file82active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 82"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file82"
+						type="text"
+						label="Slide 82 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file82link"
+						type="text"
+						label="Slide 82 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file82caption"
+						type="text"
+						label="Slide 82 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file83active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 83"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file83"
+						type="text"
+						label="Slide 83 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file83link"
+						type="text"
+						label="Slide 83 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file83caption"
+						type="text"
+						label="Slide 83 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file84active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 84"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file84"
+						type="text"
+						label="Slide 84 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file84link"
+						type="text"
+						label="Slide 84 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file84caption"
+						type="text"
+						label="Slide 84 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file85active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 85"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file85"
+						type="text"
+						label="Slide 85 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file85link"
+						type="text"
+						label="Slide 85 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file85caption"
+						type="text"
+						label="Slide 85 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file86active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 86"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file86"
+						type="text"
+						label="Slide 86 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file86link"
+						type="text"
+						label="Slide 86 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file86caption"
+						type="text"
+						label="Slide 86 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file87active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 87"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file87"
+						type="text"
+						label="Slide 87 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file87link"
+						type="text"
+						label="Slide 87 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file87caption"
+						type="text"
+						label="Slide 87 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file88active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 88"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file88"
+						type="text"
+						label="Slide 88 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file88link"
+						type="text"
+						label="Slide 88 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file88caption"
+						type="text"
+						label="Slide 88 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file89active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 89"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file89"
+						type="text"
+						label="Slide 89 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file89link"
+						type="text"
+						label="Slide 89 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file89caption"
+						type="text"
+						label="Slide 89 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file90active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 90"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file90"
+						type="text"
+						label="Slide 90 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file90link"
+						type="text"
+						label="Slide 90 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file90caption"
+						type="text"
+						label="Slide 90 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file91active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 91"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file91"
+						type="text"
+						label="Slide 91 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file91link"
+						type="text"
+						label="Slide 91 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file91caption"
+						type="text"
+						label="Slide 91 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file92active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 92"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file92"
+						type="text"
+						label="Slide 92 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file92link"
+						type="text"
+						label="Slide 92 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file92caption"
+						type="text"
+						label="Slide 92 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file93active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 93"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file93"
+						type="text"
+						label="Slide 93 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file93link"
+						type="text"
+						label="Slide 93 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file93caption"
+						type="text"
+						label="Slide 93 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file94active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 94"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file94"
+						type="text"
+						label="Slide 94 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file94link"
+						type="text"
+						label="Slide 94 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file94caption"
+						type="text"
+						label="Slide 94 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file95active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 95"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file95"
+						type="text"
+						label="Slide 95 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file95link"
+						type="text"
+						label="Slide 95 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file95caption"
+						type="text"
+						label="Slide 95 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file96active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 96"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file96"
+						type="text"
+						label="Slide 96 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file96link"
+						type="text"
+						label="Slide 96 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file96caption"
+						type="text"
+						label="Slide 96 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file97active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 97"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file97"
+						type="text"
+						label="Slide 97 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file97link"
+						type="text"
+						label="Slide 97 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file97caption"
+						type="text"
+						label="Slide 97 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file98active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 98"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file98"
+						type="text"
+						label="Slide 98 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file98link"
+						type="text"
+						label="Slide 98 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file98caption"
+						type="text"
+						label="Slide 98 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file99active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 99"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file99"
+						type="text"
+						label="Slide 99 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file99link"
+						type="text"
+						label="Slide 99 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file99caption"
+						type="text"
+						label="Slide 99 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file100active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 100"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file100"
+						type="text"
+						label="Slide 100 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file100link"
+						type="text"
+						label="Slide 100 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file100caption"
+						type="text"
+						label="Slide 100 Caption"
+						description="Caption text for this slide" />
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file101active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 101"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file101"
+						type="text"
+						label="Slide 101 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file101link"
+						type="text"
+						label="Slide 101 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file101caption"
+						type="text"
+						label="Slide 101 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file102active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 102"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file102"
+						type="text"
+						label="Slide 102 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file102link"
+						type="text"
+						label="Slide 102 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file102caption"
+						type="text"
+						label="Slide 102 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file103active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 103"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file103"
+						type="text"
+						label="Slide 103 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file103link"
+						type="text"
+						label="Slide 103 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file103caption"
+						type="text"
+						label="Slide 103 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file104active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 104"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file104"
+						type="text"
+						label="Slide 104 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file104link"
+						type="text"
+						label="Slide 104 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file104caption"
+						type="text"
+						label="Slide 104 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file105active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 105"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file105"
+						type="text"
+						label="Slide 105 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file105link"
+						type="text"
+						label="Slide 105 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file105caption"
+						type="text"
+						label="Slide 105 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file106active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 106"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file106"
+						type="text"
+						label="Slide 106 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file106link"
+						type="text"
+						label="Slide 106 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file106caption"
+						type="text"
+						label="Slide 106 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file107active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 107"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file107"
+						type="text"
+						label="Slide 107 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file107link"
+						type="text"
+						label="Slide 107 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file107caption"
+						type="text"
+						label="Slide 107 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file108active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 108"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file108"
+						type="text"
+						label="Slide 108 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file108link"
+						type="text"
+						label="Slide 108 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file108caption"
+						type="text"
+						label="Slide 108 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file109active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 109"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file109"
+						type="text"
+						label="Slide 109 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file109link"
+						type="text"
+						label="Slide 109 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file109caption"
+						type="text"
+						label="Slide 109 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file110active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 110"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file110"
+						type="text"
+						label="Slide 110 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file110link"
+						type="text"
+						label="Slide 110 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file110caption"
+						type="text"
+						label="Slide 110 Caption"
+						description="Caption text for this slide" />					
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file111active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 111"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file111"
+						type="text"
+						label="Slide 111 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file111link"
+						type="text"
+						label="Slide 111 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file111caption"
+						type="text"
+						label="Slide 111 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file112active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 112"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file112"
+						type="text"
+						label="Slide 112 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file112link"
+						type="text"
+						label="Slide 112 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file112caption"
+						type="text"
+						label="Slide 112 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file113active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 113"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file113"
+						type="text"
+						label="Slide 113 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file113link"
+						type="text"
+						label="Slide 113 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file113caption"
+						type="text"
+						label="Slide 113 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file114active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 114"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file114"
+						type="text"
+						label="Slide 114 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file114link"
+						type="text"
+						label="Slide 114 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file114caption"
+						type="text"
+						label="Slide 114 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file115active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 115"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file115"
+						type="text"
+						label="Slide 115 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file115link"
+						type="text"
+						label="Slide 115 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file115caption"
+						type="text"
+						label="Slide 115 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file116active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 116"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file116"
+						type="text"
+						label="Slide 116 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file116link"
+						type="text"
+						label="Slide 116 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file116caption"
+						type="text"
+						label="Slide 116 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file117active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 117"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file117"
+						type="text"
+						label="Slide 117 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file117link"
+						type="text"
+						label="Slide 117 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file117caption"
+						type="text"
+						label="Slide 117 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file118active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 118"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file118"
+						type="text"
+						label="Slide 118 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file118link"
+						type="text"
+						label="Slide 118 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file118caption"
+						type="text"
+						label="Slide 118 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file119active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 119"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file119"
+						type="text"
+						label="Slide 119 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file119link"
+						type="text"
+						label="Slide 119 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file119caption"
+						type="text"
+						label="Slide 119 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file120active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 120"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file120"
+						type="text"
+						label="Slide 120 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file120link"
+						type="text"
+						label="Slide 120 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file120caption"
+						type="text"
+						label="Slide 120 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file121active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 121"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file121"
+						type="text"
+						label="Slide 121 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file121link"
+						type="text"
+						label="Slide 121 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file121caption"
+						type="text"
+						label="Slide 121 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file122active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 122"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file122"
+						type="text"
+						label="Slide 122 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file122link"
+						type="text"
+						label="Slide 122 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file122caption"
+						type="text"
+						label="Slide 122 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file123active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 123"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file123"
+						type="text"
+						label="Slide 123 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file123link"
+						type="text"
+						label="Slide 123 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file123caption"
+						type="text"
+						label="Slide 123 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file124active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 124"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file124"
+						type="text"
+						label="Slide 124 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file124link"
+						type="text"
+						label="Slide 124 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file124caption"
+						type="text"
+						label="Slide 124 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file125active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 125"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file125"
+						type="text"
+						label="Slide 125 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file125link"
+						type="text"
+						label="Slide 125 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file125caption"
+						type="text"
+						label="Slide 125 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file126active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 126"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file126"
+						type="text"
+						label="Slide 126 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file126link"
+						type="text"
+						label="Slide 126 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file126caption"
+						type="text"
+						label="Slide 126 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file127active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 127"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file127"
+						type="text"
+						label="Slide 127 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file127link"
+						type="text"
+						label="Slide 127 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file127caption"
+						type="text"
+						label="Slide 127 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file128active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 128"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file128"
+						type="text"
+						label="Slide 128 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file128link"
+						type="text"
+						label="Slide 128 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file128caption"
+						type="text"
+						label="Slide 128 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file129active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 129"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file129"
+						type="text"
+						label="Slide 129 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file129link"
+						type="text"
+						label="Slide 129 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file129caption"
+						type="text"
+						label="Slide 129 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file130active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 130"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file130"
+						type="text"
+						label="Slide 130 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file130link"
+						type="text"
+						label="Slide 130 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file130caption"
+						type="text"
+						label="Slide 130 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file131active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 131"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file131"
+						type="text"
+						label="Slide 131 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file131link"
+						type="text"
+						label="Slide 131 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file131caption"
+						type="text"
+						label="Slide 131 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file132active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 132"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file132"
+						type="text"
+						label="Slide 132 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file132link"
+						type="text"
+						label="Slide 132 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file132caption"
+						type="text"
+						label="Slide 132 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file133active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 133"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file133"
+						type="text"
+						label="Slide 133 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file133link"
+						type="text"
+						label="Slide 133 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file133caption"
+						type="text"
+						label="Slide 133 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file134active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 134"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file134"
+						type="text"
+						label="Slide 134 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file134link"
+						type="text"
+						label="Slide 134 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file134caption"
+						type="text"
+						label="Slide 134 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file135active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 135"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file135"
+						type="text"
+						label="Slide 135 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file135link"
+						type="text"
+						label="Slide 135 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file135caption"
+						type="text"
+						label="Slide 135 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file136active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 136"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file136"
+						type="text"
+						label="Slide 136 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file136link"
+						type="text"
+						label="Slide 136 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file136caption"
+						type="text"
+						label="Slide 136 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file137active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 137"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file137"
+						type="text"
+						label="Slide 137 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file137link"
+						type="text"
+						label="Slide 137 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file137caption"
+						type="text"
+						label="Slide 137 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file138active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 138"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file138"
+						type="text"
+						label="Slide 138 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file138link"
+						type="text"
+						label="Slide 138 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file138caption"
+						type="text"
+						label="Slide 138 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file139active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 139"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file139"
+						type="text"
+						label="Slide 139 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file139link"
+						type="text"
+						label="Slide 139 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file139caption"
+						type="text"
+						label="Slide 139 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file140active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 140"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file140"
+						type="text"
+						label="Slide 140 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file140link"
+						type="text"
+						label="Slide 140 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file140caption"
+						type="text"
+						label="Slide 140 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file141active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 141"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file141"
+						type="text"
+						label="Slide 141 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file141link"
+						type="text"
+						label="Slide 141 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file141caption"
+						type="text"
+						label="Slide 141 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file142active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 142"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file142"
+						type="text"
+						label="Slide 142 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file142link"
+						type="text"
+						label="Slide 142 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file142caption"
+						type="text"
+						label="Slide 142 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file143active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 143"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file143"
+						type="text"
+						label="Slide 143 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file143link"
+						type="text"
+						label="Slide 143 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file143caption"
+						type="text"
+						label="Slide 143 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file144active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 144"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file144"
+						type="text"
+						label="Slide 144 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file144link"
+						type="text"
+						label="Slide 144 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file144caption"
+						type="text"
+						label="Slide 144 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file145active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 145"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file145"
+						type="text"
+						label="Slide 145 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file145link"
+						type="text"
+						label="Slide 145 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file145caption"
+						type="text"
+						label="Slide 145 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file146active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 146"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file146"
+						type="text"
+						label="Slide 146 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file146link"
+						type="text"
+						label="Slide 146 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file146caption"
+						type="text"
+						label="Slide 146 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file147active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 147"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file147"
+						type="text"
+						label="Slide 147 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file147link"
+						type="text"
+						label="Slide 147 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file147caption"
+						type="text"
+						label="Slide 147 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file148active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 148"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file148"
+						type="text"
+						label="Slide 148 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file148link"
+						type="text"
+						label="Slide 148 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file148caption"
+						type="text"
+						label="Slide 148 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file149active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 149"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file149"
+						type="text"
+						label="Slide 149 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file149link"
+						type="text"
+						label="Slide 149 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file149caption"
+						type="text"
+						label="Slide 149 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file150active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 150"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file150"
+						type="text"
+						label="Slide 150 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file150link"
+						type="text"
+						label="Slide 150 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file150caption"
+						type="text"
+						label="Slide 150 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file151active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 151"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file151"
+						type="text"
+						label="Slide 151 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file151link"
+						type="text"
+						label="Slide 151 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file151caption"
+						type="text"
+						label="Slide 151 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file152active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 152"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file152"
+						type="text"
+						label="Slide 152 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file152link"
+						type="text"
+						label="Slide 152 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file152caption"
+						type="text"
+						label="Slide 152 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file153active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 153"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file153"
+						type="text"
+						label="Slide 153 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file153link"
+						type="text"
+						label="Slide 153 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file153caption"
+						type="text"
+						label="Slide 153 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file154active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 154"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file154"
+						type="text"
+						label="Slide 154 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file154link"
+						type="text"
+						label="Slide 154 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file154caption"
+						type="text"
+						label="Slide 154 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file155active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 155"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file155"
+						type="text"
+						label="Slide 155 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file155link"
+						type="text"
+						label="Slide 155 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file155caption"
+						type="text"
+						label="Slide 155 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file156active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 156"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file156"
+						type="text"
+						label="Slide 156 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file156link"
+						type="text"
+						label="Slide 156 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file156caption"
+						type="text"
+						label="Slide 156 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file157active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 157"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file157"
+						type="text"
+						label="Slide 157 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file157link"
+						type="text"
+						label="Slide 157 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file157caption"
+						type="text"
+						label="Slide 157 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file158active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 158"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file158"
+						type="text"
+						label="Slide 158 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file158link"
+						type="text"
+						label="Slide 158 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file158caption"
+						type="text"
+						label="Slide 158 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file159active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 159"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file159"
+						type="text"
+						label="Slide 159 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file159link"
+						type="text"
+						label="Slide 159 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file159caption"
+						type="text"
+						label="Slide 159 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file160active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 160"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file160"
+						type="text"
+						label="Slide 160 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file160link"
+						type="text"
+						label="Slide 160 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file160caption"
+						type="text"
+						label="Slide 160 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file161active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 161"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file161"
+						type="text"
+						label="Slide 161 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file161link"
+						type="text"
+						label="Slide 161 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file161caption"
+						type="text"
+						label="Slide 161 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file162active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 162"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file162"
+						type="text"
+						label="Slide 162 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file162link"
+						type="text"
+						label="Slide 162 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file162caption"
+						type="text"
+						label="Slide 162 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file163active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 163"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file163"
+						type="text"
+						label="Slide 163 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file163link"
+						type="text"
+						label="Slide 163 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file163caption"
+						type="text"
+						label="Slide 163 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file164active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 164"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file164"
+						type="text"
+						label="Slide 164 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file164link"
+						type="text"
+						label="Slide 164 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file164caption"
+						type="text"
+						label="Slide 164 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file165active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 165"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file165"
+						type="text"
+						label="Slide 165 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file165link"
+						type="text"
+						label="Slide 165 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file165caption"
+						type="text"
+						label="Slide 165 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file166active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 166"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file166"
+						type="text"
+						label="Slide 166 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file166link"
+						type="text"
+						label="Slide 166 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file166caption"
+						type="text"
+						label="Slide 166 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file167active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 167"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file167"
+						type="text"
+						label="Slide 167 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file167link"
+						type="text"
+						label="Slide 167 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file167caption"
+						type="text"
+						label="Slide 167 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file168active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 168"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file168"
+						type="text"
+						label="Slide 168 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file168link"
+						type="text"
+						label="Slide 168 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file168caption"
+						type="text"
+						label="Slide 168 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file169active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 169"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file169"
+						type="text"
+						label="Slide 169 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file169link"
+						type="text"
+						label="Slide 169 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file169caption"
+						type="text"
+						label="Slide 169 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file170active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 170"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file170"
+						type="text"
+						label="Slide 170 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file170link"
+						type="text"
+						label="Slide 170 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file170caption"
+						type="text"
+						label="Slide 170 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file171active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 171"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file171"
+						type="text"
+						label="Slide 171 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file171link"
+						type="text"
+						label="Slide 171 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file171caption"
+						type="text"
+						label="Slide 171 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file172active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 172"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file172"
+						type="text"
+						label="Slide 172 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file172link"
+						type="text"
+						label="Slide 172 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file172caption"
+						type="text"
+						label="Slide 172 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file173active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 173"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file173"
+						type="text"
+						label="Slide 173 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file173link"
+						type="text"
+						label="Slide 173 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file173caption"
+						type="text"
+						label="Slide 173 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file174active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 174"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file174"
+						type="text"
+						label="Slide 174 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file174link"
+						type="text"
+						label="Slide 174 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file174caption"
+						type="text"
+						label="Slide 174 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file175active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 175"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file175"
+						type="text"
+						label="Slide 175 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file175link"
+						type="text"
+						label="Slide 175 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file175caption"
+						type="text"
+						label="Slide 175 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file176active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 176"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file176"
+						type="text"
+						label="Slide 176 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file176link"
+						type="text"
+						label="Slide 176 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file176caption"
+						type="text"
+						label="Slide 176 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file177active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 177"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file177"
+						type="text"
+						label="Slide 177 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file177link"
+						type="text"
+						label="Slide 177 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file177caption"
+						type="text"
+						label="Slide 177 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file178active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 178"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file178"
+						type="text"
+						label="Slide 178 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file178link"
+						type="text"
+						label="Slide 178 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file178caption"
+						type="text"
+						label="Slide 178 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file179active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 179"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file179"
+						type="text"
+						label="Slide 179 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file179link"
+						type="text"
+						label="Slide 179 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file179caption"
+						type="text"
+						label="Slide 179 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file180active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 180"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file180"
+						type="text"
+						label="Slide 180 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file180link"
+						type="text"
+						label="Slide 180 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file180caption"
+						type="text"
+						label="Slide 180 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file181active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 181"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file181"
+						type="text"
+						label="Slide 181 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file181link"
+						type="text"
+						label="Slide 181 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file181caption"
+						type="text"
+						label="Slide 181 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file182active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 182"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file182"
+						type="text"
+						label="Slide 182 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file182link"
+						type="text"
+						label="Slide 182 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file182caption"
+						type="text"
+						label="Slide 182 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file183active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 183"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file183"
+						type="text"
+						label="Slide 183 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file183link"
+						type="text"
+						label="Slide 183 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file183caption"
+						type="text"
+						label="Slide 183 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file184active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 184"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file184"
+						type="text"
+						label="Slide 184 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file184link"
+						type="text"
+						label="Slide 184 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file184caption"
+						type="text"
+						label="Slide 184 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file185active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 185"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file185"
+						type="text"
+						label="Slide 185 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file185link"
+						type="text"
+						label="Slide 185 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file185caption"
+						type="text"
+						label="Slide 185 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file186active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 186"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file186"
+						type="text"
+						label="Slide 186 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file186link"
+						type="text"
+						label="Slide 186 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file186caption"
+						type="text"
+						label="Slide 186 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file187active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 187"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file187"
+						type="text"
+						label="Slide 187 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file187link"
+						type="text"
+						label="Slide 187 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file187caption"
+						type="text"
+						label="Slide 187 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file188active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 188"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file188"
+						type="text"
+						label="Slide 188 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file188link"
+						type="text"
+						label="Slide 188 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file188caption"
+						type="text"
+						label="Slide 188 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file189active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 189"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file189"
+						type="text"
+						label="Slide 189 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file189link"
+						type="text"
+						label="Slide 189 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file189caption"
+						type="text"
+						label="Slide 189 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file190active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 190"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file190"
+						type="text"
+						label="Slide 190 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file190link"
+						type="text"
+						label="Slide 190 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file190caption"
+						type="text"
+						label="Slide 190 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file191active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 191"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file191"
+						type="text"
+						label="Slide 191 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file191link"
+						type="text"
+						label="Slide 191 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file191caption"
+						type="text"
+						label="Slide 191 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file192active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 192"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file192"
+						type="text"
+						label="Slide 192 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file192link"
+						type="text"
+						label="Slide 192 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file192caption"
+						type="text"
+						label="Slide 192 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file193active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 193"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file193"
+						type="text"
+						label="Slide 193 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file193link"
+						type="text"
+						label="Slide 193 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file193caption"
+						type="text"
+						label="Slide 193 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file194active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 194"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file194"
+						type="text"
+						label="Slide 194 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file194link"
+						type="text"
+						label="Slide 194 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file194caption"
+						type="text"
+						label="Slide 194 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file195active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 195"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file195"
+						type="text"
+						label="Slide 195 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file195link"
+						type="text"
+						label="Slide 195 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file195caption"
+						type="text"
+						label="Slide 195 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file196active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 196"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file196"
+						type="text"
+						label="Slide 196 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file196link"
+						type="text"
+						label="Slide 196 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file196caption"
+						type="text"
+						label="Slide 196 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file197active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 197"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file197"
+						type="text"
+						label="Slide 197 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file197link"
+						type="text"
+						label="Slide 197 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file197caption"
+						type="text"
+						label="Slide 197 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file198active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 198"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file198"
+						type="text"
+						label="Slide 198 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file198link"
+						type="text"
+						label="Slide 198 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file198caption"
+						type="text"
+						label="Slide 198 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file199active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 199"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file199"
+						type="text"
+						label="Slide 199 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file199link"
+						type="text"
+						label="Slide 199 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file199caption"
+						type="text"
+						label="Slide 199 Caption"
+						description="Caption text for this slide" />						
+
+				<field type="spacer" hr="true" />
+
+					<field
+						name="file200active"
+						type="radio"
+						default="0"
+						class="btn-group"
+						label="Show Slide 200"
+						description="Choose if the slide should be displayed or not">
+							<option	value="1">Yes</option>
+							<option	value="0">No</option>
+						</field>
+		
+					<field
+						name="file200"
+						type="text"
+						label="Slide 200 Location"
+						description="Full path of the image file, without the leading slash (ex.: images/myfile.jpg)" />
+
+					<field
+						name="file200link"
+						type="text"
+						label="Slide 200 Link"
+						description="URL for this slide" />
+
+					<field
+						name="file200caption"
+						type="text"
+						label="Slide 200 Caption"
+						description="Caption text for this slide" />				
+
+			</fieldset>
+
+			<fieldset name="advanced">
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>

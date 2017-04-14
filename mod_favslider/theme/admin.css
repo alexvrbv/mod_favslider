@@ -1,0 +1,66 @@
+/*
+Description: FavSlider Admin CSS
+*/
+
+
+/*  Tabs
+---------------------------------------------------------------------- */
+
+#moduleOptions .accordion-heading a {
+  font-weight: bold;
+  padding: 6px 18px;
+  line-height: 24px;
+  color: #444444;
+  background: #ededed;
+  background-image: -moz-linear-gradient(#ededed 1%, #dbdbdb 100%);
+  background-image: -webkit-linear-gradient(#ededed 1%, #dbdbdb 100%);
+  background-image: -o-linear-gradient(#ededed 1%, #dbdbdb 100%);
+  background-image: linear-gradient(#ededed 1%, #dbdbdb 100%);
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.811765);
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+#moduleOptions .accordion-heading a:hover {
+	text-decoration: none;
+	color: #444;
+  background: #e0e0e0;
+  background-image: -moz-linear-gradient(270deg, #ededed 1%, #dbdbdb 100%);
+  background-image: -webkit-linear-gradient(270deg, #ededed 1%, #dbdbdb 100%);
+  background-image: -o-linear-gradient(270deg, #ededed 1%, #dbdbdb 100%);
+  background-image: linear-gradient(180deg, #ededed 1%, #dbdbdb 100%);
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.811765);
+  -moz-box-shadow: inset 1px 1px 3px 0px rgba(0, 0, 0, 0.278431);
+  -webkit-box-shadow: inset 1px 1px 3px 0px rgba(0, 0, 0, 0.278431);
+  -o-box-shadow: inset 1px 1px 3px 0px rgba(0, 0, 0, 0.278431);
+  box-shadow: inset 1px 1px 3px 0px rgba(0, 0, 0, 0.278431);
+  -webkit-transition: all 200ms linear;
+	-moz-transition: all 200ms linear;
+	-o-transition: all 200ms linear;
+	transition: all 200ms linear;
+}
+@media handheld, only screen and (min-width: 767px) {
+
+	#moduleOptions .control-group hr { 
+		border-top: 1px solid #dddddd; 
+		border-bottom: 1px solid #ffffff; 
+		width: 38em; 
+	}
+	#moduleOptions .control-label { 
+		width: 20em; 
+	}
+	#moduleOptions .accordion-inner { 
+		padding: 3em 1em 2em; 
+	}
+	#moduleOptions .accordion-group {
+    border: 1px solid #dedede;
+  }
+
+}
+
+
+
+
+
+
